@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 app.config['MONGO_DBNAME'] = 'prueba'
-mongo_ip = '192.168.1.31'
+mongo_ip = '192.168.1.32'
 port = '27017'
 app.secret_key = str(os.system('openssl rand -base64 24'))
 
@@ -52,13 +52,10 @@ def logout():
 def data():
 	usuario=(session['usuario'])
 	collections=mongo.db.collection_names()
-	lista=[]
+	datos={}
 	for collection in collections:
-		lista.append(collection={})
-		for item in mongo.db[collection]
-
-
-	return render_template('index.html',usuario=usuario,collections=collections)
+		datos[collection]=list(mongo.db[collection].find())
+	return render_template('index.html',usuario=usuario,datos=datos)
 
 
 

@@ -8,56 +8,66 @@
 
 {% endblock %}
 
+
+
 {% block usuario2 %}
 
 Collections de {{usuario}}
 
 {% endblock %}
 
+
+
 {% block contenido1 %}
 
+  {% for collection in datos.keys() %}
                     <div class="col-md-12">
                         <div class="content-panel">
-                            <h4><i class="fa fa-angle-right"></i> USUARIO</h4>
+                            <h4><i class="fa fa-angle-right"></i>{{collection}}</h4>
                             <hr>
                           <table class="table">
                               <thead>
-                              <tr>
-                                  <th>Nombre</th>
-                              </tr>
+                                <tr>
+
+                                {% for key in datos[collection][0].keys() %}
+
+                                  {% if key!='_id' %}
+                                    
+                                      <th>{{key}}</th>                                    
+
+                                  {% endif %}
+
+                                {% endfor %}
+
+                                </tr>
                               </thead>
                               <tbody>
-                              <tr>
-                                  <td>{{usuario}}</td>
-                              </tr>
+                                
 
+                                {% for registro in datos[collection] %}
+
+                                  <tr>
+
+                                  {% for dato in registro.values() %}
+
+                                    {% if dato is string %}
+                                                                         
+                                        <td>{{dato}}</td>
+
+                                    {% endif %}
+
+                                  {% endfor %}
+
+                                  <tr>
+
+                                {% endfor %}
+
+                                
                               </tbody>
                           </table>
                         </div><!--/content-panel -->
                     </div><!-- /col-md-12 -->
                     <br>
-                    <div class="col-md-12">
-                        <div class="content-panel">
-                            <h4><i class="fa fa-angle-right"></i> Collections</h4>
-                            <hr>
-                          <table class="table">
-                              <thead>
-                              <tr>
-                                  <th>Nombre</th>
-                              </tr>
-                              </thead>
-                              <tbody>
-                              {% for collection in collections %}
-                              <tr>
-                                  <td>{{collection}}</td>
-                              </tr>
-                              {% endfor %}
-
-
-                              </tbody>
-                          </table>
-                        </div><!--/content-panel -->
-                    </div><!-- /col-md-12 -->                    
-	
-
+  {% endfor %}
+              
 {% endblock %}
