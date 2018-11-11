@@ -50,7 +50,7 @@ Collections de {{usuario}}
 
                                   {% for dato in registro.values() %}
 
-                                    {% if dato is string %}
+                                    {% if dato is string or dato is number %}
                                                                          
                                         <td>{{dato}}</td>
 

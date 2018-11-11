@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__)
 
-app.config['MONGO_DBNAME'] = 'prueba'
+app.config['MONGO_DBNAME'] = 'webmongo'
 mongo_ip = '192.168.1.32'
 port = '27017'
 app.secret_key = str(os.system('openssl rand -base64 24'))
@@ -47,7 +47,7 @@ def logout():
 	mongo.db.logout()
 	return redirect('/')
 
-
+# Envío de datos de los collections a la plantilla
 @app.route('/data', methods=['GET'])
 def data():
 	usuario=(session['usuario'])
@@ -57,9 +57,5 @@ def data():
 		datos[collection]=list(mongo.db[collection].find())
 	return render_template('index.html',usuario=usuario,datos=datos)
 
-
-
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
+#if __name__ == '__main__':
+#    app.run(debug=True)
