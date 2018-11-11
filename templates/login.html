@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Mongo Web - Login</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="static/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        
+    <!-- Custom styles for this template -->
+    <link href="static/css/style.css" rel="stylesheet">
+    <link href="static/css/style-responsive.css" rel="stylesheet">
+
+    <!-- CSS Personalizado -->
+    <link href="static/css/main2.css" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+
+	  <div id="login-page">
+	  	<div class="container">
+	  	
+		      <form class="form-login" action="/login" method="post">
+		        <h2 class="form-login-heading">Mongo Web</h2>
+		        <div class="login-wrap">
+		            <input name="usuario" type="text" class="form-control" placeholder="Usuario" autofocus>
+		            <br>
+		            <input name="pass" type="password" class="form-control" placeholder="Contraseña">
+                {% if valor %}
+                  <p class="wrongpass">Usuario o Contraseña Incorrecta</p>
+                {% endif %}
+		            <hr>
+		            <button class="btn btn-theme btn-block" type="submit">
+		            	<i class="fa fa-lock"></i> Conectarse</button>
+
+	        </div>		
+		
+		      </form>	  	
+	  	
+	  	</div>
+	  </div>
+
+  </body>
+</html>

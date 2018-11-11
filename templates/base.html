@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mongo Web</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="static/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="static/css/zabuto_calendar.css">
+
+    <link rel="stylesheet" type="text/css" href="static/lineicons/style.css">    
+    
+    <!-- Custom styles for this template -->
+    <link href="static/css/style.css" rel="stylesheet">
+    <link href="static/css/style-responsive.css" rel="stylesheet">
+
+    <!-- CSS Personalizado -->
+    <link href="static/css/main.css" rel="stylesheet">
+    <link href="static/css/main2.css" rel="stylesheet">
+
+        
+  </head>
+
+  <body>
+
+  <section id="container" >
+      <!--header start-->
+      <header class="header black-bg">
+
+            <!--logo start-->
+            <a href="/" class="logo logojp"><b>MONGO WEB</b></a>
+            <!--logo end-->
+
+            <div class="top-menu">
+              {% block usuario %}{% endblock %}
+            	<ul class="nav pull-right top-menu">
+                    <li><a class="logout logoutjp" href="/logout">Desconectarse</a></li>
+            	</ul>
+            </div>
+        </header>
+      <!--header end--> 
+
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+            <h3><i class="fa fa-angle-right"></i>{% block usuario2 %}{% endblock %}</h3>
+            <div class="row">
+
+              {% block contenido1 %}{% endblock %}
+        
+            </div><!-- row -->
+          </section><!--/wrapper -->          
+      </section><!--main content end-->
+
+      <!--footer start-->
+      <footer class="site-footer">
+          <div class="text-center">
+              2018 - Jpcarmona
+              <a href="/" class="go-top">
+                  <i class="fa fa-angle-up"></i>
+              </a>
+          </div>
+      </footer>
+      <!--footer end-->
+
+  </section>
+
+  </body>
+</html>

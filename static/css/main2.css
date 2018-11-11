@@ -1,0 +1,30 @@
+body {
+    position: relative;
+    height: 600px;
+    background: url("../img/mongo.png") center bottom no-repeat;
+    background-color: #f2f2f2;
+}
+
+.wrongpass {
+	color: red !important;
+	text-align: center;
+	margin-top: 15px;
+}
+
+.usuario {
+	float: left !important;
+	margin: 15px 0 0 30%;
+}
+
+.usuario2 {
+	color: #2a6496;
+	font-size: 20px;
+}
+
+.logojp{
+	color: green !important;
+}
+
+.logoutjp{
+	color: red !important;
+}
